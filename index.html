@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+    <div class="container">
+        <h1>I'm <span class="multiText"></span></h1>
+        <div class="cloud">
+        </div>
+        
+    </div>
+    <script>
+        function rain(){
+            let cloud = document.querySelector('.cloud');
+            let e = document.createElement('div');
+            let left = Math.floor(Math.random() * 310);
+            let width = Math.random() * 5;
+            let height = Math.random() * 50;
+            let duration = Math.random() * 0.5;
+
+            e.classList.add('drop');
+            cloud.appendChild(e);
+            e.style.left = left + 'px';
+            e.style.width = 0.5+width + 'px';
+            e.style.height = 0.5+height + 'px';
+            e.style.animationDuration = 1+duration+'s';
+
+
+            setTimeout(function(){
+                cloud.removeChild(e)
+            },2000)
+        }
+
+        setInterval(function(){
+            rain()
+        },20);
+    </script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typingEffect = new Typed(".multiText",{
+            strings : ["Mashhur","php devoloper","desinger","youtuber"],
+            loop : true,
+            typeSpeed : 100,
+            backSpeed : 80,
+            backDelay :1500,
+        })
+    </script>
+</body>
+</html>
